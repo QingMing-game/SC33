@@ -29,7 +29,7 @@
     object-fit: cover;
 }
 
-/* ===== 视频暗色遮罩（增强可读性） ===== */
+/* ===== 视频暗色遮罩（唯一背景层） ===== */
 .video-mask {
     position: fixed;
     inset: 0;
@@ -37,7 +37,7 @@
     z-index: -1;
 }
 
-/* ===== 页面基础 ===== */
+/* ===== 页面基础（❌ 不再设置任何背景） ===== */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
     margin: 0;
@@ -186,10 +186,10 @@ a.btn:active {
 
     <img class="game-icon" src="./icon.png" alt="生存33天图标">
 
-    <h1>生存33天BT服</h1>
+    <h1>生存33天BT国际服</h1>
 
-    <p>福利在游戏内领取</p>
-    <p>内测阶段资源拉满</p>
+    <p>福利CDK在游戏内领取</p>
+    <p>内测福利看群消息</p>
 
     <div class="btn-group">
         <a class="btn" href="https://qm.qq.com/q/C5dNenYWjI" target="_blank" rel="noopener noreferrer">
@@ -203,7 +203,8 @@ a.btn:active {
 <div id="notice">
     <div class="notice-box">
         <h3>📢 公告</h3>
-        <p>游戏福利内容请进入游戏内查看！</p>
+        <p>预计1.27或1.28开启全民内测</p>
+        <p>点击下载进QQ群 加群等候一下注册和下载链接</p>
         <button onclick="closeNotice()">我已知晓</button>
     </div>
 </div>
