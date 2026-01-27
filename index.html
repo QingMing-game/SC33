@@ -15,24 +15,33 @@
 </script>
 
 <style>
-/* ===== 页面背景：冷暗灰绿 + 雾感层次 ===== */
+/* ===== 全屏视频背景 ===== */
+.video-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== 视频暗色遮罩（增强可读性） ===== */
+.video-mask {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+/* ===== 页面基础 ===== */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
     margin: 0;
     padding: 0;
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(255,255,255,0.06),
-            rgba(0,0,0,0.55) 60%
-        ),
-        linear-gradient(
-            180deg,
-            #1b1f1d 0%,
-            #242a26 40%,
-            #1a1e1c 100%
-        );
-    background-attachment: fixed;
 }
 
 /* ===== 主体卡片 ===== */
@@ -163,9 +172,18 @@ a.btn:active {
 
 <body>
 
+<!-- 🎬 视频背景 -->
+<div class="video-bg">
+    <video autoplay muted loop playsinline>
+        <source src="https://survive33days.37.com.cn/media/ALL.13492b2.webm" type="video/webm">
+    </video>
+</div>
+
+<!-- 🌫 暗色遮罩 -->
+<div class="video-mask"></div>
+
 <div class="main">
 
-    <!-- ✅ 图标：统一使用 icon.png（与 index.html 同目录） -->
     <img class="game-icon" src="./icon.png" alt="生存33天图标">
 
     <h1>生存33天BT服</h1>
