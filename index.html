@@ -6,7 +6,7 @@
 <title>生存33天</title>
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EE3J9BQ2RW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -15,11 +15,11 @@
 </script>
 
 <style>
-/* ===== 全屏视频背景 ===== */
+/* ===== 全屏视频背景（仅视频，无任何遮罩） ===== */
 .video-bg {
     position: fixed;
     inset: 0;
-    z-index: -2;
+    z-index: -1;
     overflow: hidden;
 }
 
@@ -29,15 +29,7 @@
     object-fit: cover;
 }
 
-/* ===== 视频暗色遮罩（唯一背景层） ===== */
-.video-mask {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: -1;
-}
-
-/* ===== 页面基础（❌ 不再设置任何背景） ===== */
+/* ===== 页面基础 ===== */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
     margin: 0;
@@ -121,7 +113,7 @@ a.btn:active {
 #notice {
     position: fixed;
     inset: 0;
-    background: rgba(25,15,5,0.8);
+    background: rgba(0,0,0,0.55);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,21 +171,18 @@ a.btn:active {
     </video>
 </div>
 
-<!-- 🌫 暗色遮罩 -->
-<div class="video-mask"></div>
-
 <div class="main">
 
     <img class="game-icon" src="./icon.png" alt="生存33天图标">
 
-    <h1>生存33天BT国际服</h1>
+    <h1>生存33天 BT 国际服</h1>
 
-    <p>福利CDK在游戏内领取</p>
-    <p>内测福利看群消息</p>
+    <p>福利 CDK 在游戏内领取</p>
+    <p>内测福利请关注群消息</p>
 
     <div class="btn-group">
         <a class="btn" href="https://qm.qq.com/q/C5dNenYWjI" target="_blank" rel="noopener noreferrer">
-            💫游戏下载点这里💫
+            💫 游戏下载点这里 💫
         </a>
     </div>
 
@@ -203,8 +192,8 @@ a.btn:active {
 <div id="notice">
     <div class="notice-box">
         <h3>📢 公告</h3>
-        <p>预计1.27或1.28开启全民内测</p>
-        <p>点击下载进QQ群 加群等候一下注册和下载链接</p>
+        <p>预计 1.27 / 1.28 开启全民内测</p>
+        <p>点击下载后进群等候注册与下载链接</p>
         <button onclick="closeNotice()">我已知晓</button>
     </div>
 </div>
