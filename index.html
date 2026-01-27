@@ -3,144 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>生存33天｜官方入口</title>
+<title>生存33天</title>
 
-<!-- Google Analytics（可留） -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EE3J9BQ2RW"></script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-EE3J9BQ2RW');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EE3J9BQ2RW');
 </script>
 
 <style>
-/* ================== 全屏视频背景 ================== */
+/* ===== 全局盒模型优化 ===== */
+* {
+    box-sizing: border-box;
+}
+
+/* ===== 全屏视频背景 ===== */
 .video-bg {
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: -2;
     overflow: hidden;
-    background: #000;
 }
 
-.video-bg video,
-.video-bg .video-poster {
-    position: absolute;
+.video-bg video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.video-bg video {
-    filter: brightness(0.9) contrast(1.25) saturate(1.08);
-}
-
-/* 封面图（视频加载前） */
-.video-poster {
-    z-index: 2;
-    transition: opacity 1.2s ease;
-}
-
-/* ================== 页面主体 ================== */
+/* ===== 页面基础 ===== */
 body {
-    margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
+    margin: 0;
+    padding: 0;
 }
 
+/* ===== 主体卡片 ===== */
 .main {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.card {
-    width: 100%;
     max-width: 420px;
+    margin: 64px auto;
     background: #fff6e4;
+    padding: 32px 22px 36px;
     border-radius: 22px;
-    padding: 34px 22px 38px;
     text-align: center;
     box-shadow:
-        0 26px 60px rgba(0,0,0,.55),
-        inset 0 0 0 2px rgba(120,100,60,.15);
+        0 24px 60px rgba(0,0,0,0.6),
+        inset 0 0 0 2px rgba(120,120,120,0.15);
 }
 
-/* ================== 内容 ================== */
+/* ===== 游戏图标 ===== */
 .game-icon {
-    width: 96px;
-    height: 96px;
+    width: 92px;
+    height: 92px;
     border-radius: 22px;
-    margin-bottom: 16px;
-    box-shadow: 0 10px 26px rgba(0,0,0,.45);
+    margin-bottom: 14px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.4);
 }
 
+/* ===== 标题 ===== */
 h1 {
-    margin: 12px 0 10px;
-    font-size: 24px;
+    margin: 14px 0 10px;
+    font-size: 23px;
     color: #3b2414;
+    text-shadow: 1px 1px 0 #e7d2b0, -1px -1px 0 #7a4d1d;
     letter-spacing: 1px;
 }
 
+/* ===== 文案 ===== */
 p {
     margin: 6px 0;
-    font-size: 14px;
     color: #5b442e;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.75;
 }
 
-/* ================== 按钮 ================== */
+/* ===== 按钮组 ===== */
 .btn-group {
-    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
 }
 
+/* ===== 按钮样式（居中兼容 App） ===== */
 a.btn {
     display: block;
     width: 100%;
     max-width: 320px;
     margin: 12px auto;
-    padding: 15px;
-    border-radius: 16px;
-    font-size: 16px;
-    text-decoration: none;
-    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+
     background: linear-gradient(180deg, #c03a2b, #8f2319);
+    color: #fff;
+    font-size: 16px;
+    border-radius: 16px;
+    text-decoration: none;
+
     box-shadow: 0 10px 22px rgba(0,0,0,.35);
     transition: all .2s ease;
 }
 
-a.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(0,0,0,.45);
+a.btn:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.35),
+        inset 0 2px 6px rgba(0,0,0,0.4);
 }
 
-/* ================== 公告弹窗 ================== */
+a.btn.secondary {
+    background: linear-gradient(180deg, #8a7660, #66503a);
+}
+
+/* ===== 公告遮罩 ===== */
 #notice {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.65);
+    background: rgba(25,15,5,0.8);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
 }
 
+/* ===== 公告弹窗 ===== */
 .notice-box {
+    background: #fff6e4;
     width: 90%;
     max-width: 360px;
-    background: #fff6e4;
-    padding: 26px 22px 30px;
+    padding: 26px 22px 28px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 20px 46px rgba(0,0,0,.5);
-    animation: popup .35s ease-out;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+    animation: popup 0.35s ease-out;
 }
 
 @keyframes popup {
     from { transform: translateY(40px); opacity: 0; }
-    to   { transform: translateY(0); opacity: 1; }
+    to   { transform: translateY(0);  opacity: 1; }
 }
 
 .notice-box h3 {
@@ -157,12 +160,12 @@ a.btn:hover {
 
 .notice-box button {
     margin-top: 18px;
-    padding: 12px 28px;
-    font-size: 15px;
-    border: none;
-    border-radius: 14px;
+    padding: 11px 26px;
     background: linear-gradient(180deg, #c03a2b, #8f2319);
     color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
     cursor: pointer;
 }
 </style>
@@ -170,51 +173,43 @@ a.btn:hover {
 
 <body>
 
-<!-- 视频背景 -->
+<!-- 🎬 视频背景 -->
 <div class="video-bg">
-    <img class="video-poster" src="bg-poster.jpg" alt="">
     <video autoplay muted loop playsinline>
         <source src="https://survive33days.37.com.cn/media/ALL.13492b2.webm" type="video/webm">
     </video>
 </div>
 
 <div class="main">
-    <div class="card">
-        <img class="game-icon" src="./icon.png" alt="生存33天">
-        <h1>生存33天 BT 国际服</h1>
-        <p>福利 CDK 在游戏内领取</p>
-        <p>内测福利详见官方群公告</p>
 
-        <div class="btn-group">
-            <a class="btn" href="https://qm.qq.com/q/C5dNenYWjI" target="_blank">
-                💫 立即下载游戏 💫
-            </a>
-        </div>
+    <img class="game-icon" src="./icon.png" alt="生存33天图标">
+
+    <h1>生存33天BT国际服</h1>
+
+    <p>福利CDK在游戏内领取</p>
+    <p>内测福利看群消息</p>
+
+    <div class="btn-group">
+        <a class="btn" href="https://qm.qq.com/q/C5dNenYWjI" target="_blank" rel="noopener noreferrer">
+            💫游戏下载点这里💫
+        </a>
     </div>
+
 </div>
 
 <!-- 公告 -->
 <div id="notice">
     <div class="notice-box">
         <h3>📢 公告</h3>
-        <p>预计 1.27 / 1.28 开启全民内测</p>
-        <p>请先加群等待注册与下载链接</p>
+        <p>预计1.27或1.28开启全民内测</p>
+        <p>点击下载进QQ群 加群等候一下注册和下载链接</p>
         <button onclick="closeNotice()">我已知晓</button>
     </div>
 </div>
 
 <script>
-/* 视频加载完成后隐藏封面 */
-const video = document.querySelector('.video-bg video');
-const poster = document.querySelector('.video-poster');
-
-video.addEventListener('canplay', () => {
-    poster.style.opacity = '0';
-});
-
-/* 公告关闭 */
 function closeNotice() {
-    document.getElementById('notice').style.display = 'none';
+    document.getElementById("notice").style.display = "none";
 }
 </script>
 
